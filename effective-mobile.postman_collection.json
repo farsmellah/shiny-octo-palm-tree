@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "8264a9ce-7f08-4c63-b838-99fde639c4bf",
+		"name": "Tasks API (Laravel)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31973750"
+	},
+	"item": [
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "List tasks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/{{api_prefix}}/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_prefix}}",
+								"tasks"
+							]
+						},
+						"description": "GET /tasks — returns all tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Create task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Buy milk\",\n  \"description\": \"2 liters\",\n  \"status\": \"pending\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{api_prefix}}/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_prefix}}",
+								"tasks"
+							]
+						},
+						"description": "POST /tasks — create a new task"
+					},
+					"response": []
+				},
+				{
+					"name": "Get task by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/{{api_prefix}}/tasks/{{taskId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_prefix}}",
+								"tasks",
+								"{{taskId}}"
+							]
+						},
+						"description": "GET /tasks/{id} — show a task by id (uses {{taskId}})"
+					},
+					"response": []
+				},
+				{
+					"name": "Update task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"done\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/{{api_prefix}}/tasks/{{taskId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_prefix}}",
+								"tasks",
+								"{{taskId}}"
+							]
+						},
+						"description": "PUT /tasks/{id} — update a task (uses {{taskId}})"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/{{api_prefix}}/tasks/{{taskId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_prefix}}",
+								"tasks",
+								"{{taskId}}"
+							]
+						},
+						"description": "DELETE /tasks/{id} — delete a task (uses {{taskId}})"
+					},
+					"response": []
+				},
+				{
+					"name": "ApiHealth",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/{{api_prefix}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{api_prefix}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "api_prefix",
+			"value": "/api",
+			"type": "string"
+		},
+		{
+			"key": "taskId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
