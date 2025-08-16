@@ -1,6 +1,9 @@
-.PHONY: start vendor migrate rollback seed build stop
+.PHONY: start vendor migrate rollback seed build stop env
 
 SERVICE_NAME=laravel
+
+env: 
+	cp .env.example .env
 
 start:
 	docker compose up -d
